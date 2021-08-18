@@ -1,6 +1,7 @@
 # Capstone-Middleware
 
 `cd capstone-middleware`
+
 `npm install --save-dev`
 
 use Postman to Signup first to create/ Provision a user and it generates JWT access token for the registered user
@@ -10,6 +11,7 @@ You can test API's using postman collection and from UI as well.
 # CapstoneUi
 
 `cd capstone-ui`
+
 `npm install`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
