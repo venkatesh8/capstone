@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "3a29a22f-96e8-48ca-8e19-099c507a7c8d",
+		"name": "Capstone-CandidatesEntry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Venky c\",\n    \"email\": \"v@trer.com\",\n    \"password\": \"Meritus@321\",\n    \"role\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var data = jsonData.data;",
+							"if(data){",
+							"    postman.setGlobalVariable(\"ACCESS_TOKEN\", data.accessToken);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"v@m.com\",\n    \"password\": \"Meritus@321\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch All Fields",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ACCESS_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/fields",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fields"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Candidates",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ACCESS_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/candidates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Candidate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ACCESS_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/candidates/611b86feced719548fc653d1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidates",
+						"611b86feced719548fc653d1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Candiadte",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWI3ODRhYmQ5YzZhMmZhY2ZjNTk3NSIsImlhdCI6MTYyOTI2NDg3NCwiZXhwIjoxNjI5MzUxMjc0fQ.YbowBqbm4nBCZWlsOKWzco8rTj1092p0QnQY4FFPOrU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"vv\",\r\n    \"middleName\": \"vv\",\r\n    \"lastName\": \"vv\",\r\n    \"email\": \"vv@vv.vv\",\r\n    \"mobileNumber\": \"9999999999\",\r\n    \"role\": \"Analyst IT\",\r\n    \"domain\": \"IT Support\",\r\n    \"resumeSource\": \"TimesJobs\",\r\n    \"formToEmail\": \"Candidate personal details\",\r\n    \"recruiterName\": \"Vamshi Vemulapalli\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/candidates/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidates",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Candiadte Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMWI3ODRhYmQ5YzZhMmZhY2ZjNTk3NSIsImlhdCI6MTYyOTI2NDg3NCwiZXhwIjoxNjI5MzUxMjc0fQ.YbowBqbm4nBCZWlsOKWzco8rTj1092p0QnQY4FFPOrU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"firstName\": \"Akhil\",\r\n            \"lastName\": \"Vadla\",\r\n            \"middleName\": \"Kumar\",\r\n            \"email\": \"venky8.iiib@gmail.com\",\r\n            \"mobileNumber\": \"9959095474\",\r\n            \"role\": \"Software Development\",\r\n            \"resumeSoure\": \"TimesJob\",\r\n            \"formToEmail\": \"Technical Interview From\",\r\n            \"recruiterName\": \"Venkatesh Badigeru\",\r\n            \"domain\": \"Technology\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/candidates/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidates",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Candidate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ACCESS_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"domain\":\"Technology\",\r\n    \"resumeSoure\": \"Naukri\",\r\n    \"role\": \"Product\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/candidates/611c839cfa0b784c4c378de8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidates",
+						"611c839cfa0b784c4c378de8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Candidate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ACCESS_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/candidates/611bfa1574775d8feaa13bfd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidates",
+						"611bfa1574775d8feaa13bfd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
