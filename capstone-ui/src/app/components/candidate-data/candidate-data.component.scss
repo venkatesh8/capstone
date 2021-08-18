@@ -1,0 +1,37 @@
+.select-per-page{
+    height: 45px;
+}
+.pagination{
+    color: #ffffff;
+}
+.page-item.active .page-link{
+    background-color: #96ae21 !important;
+    border-color: #8b8e90 !important;
+}
+.header{
+    color: #ffffff;
+    background-color: #96ae38;
+}
+tbody > tr{
+    border-bottom: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #ffffff;
+}
+ table  {
+    font-size: 14px !important;
+}
+
+td {
+    width: 1px;
+    white-space: nowrap;
+}
+.close{
+    float: right;
+    padding: 0px;
+}
+.table-wrapper{ 
+    max-width:100%; 
+    overflow-x:scroll; 
+    position:relative;
+    height: auto;
+}

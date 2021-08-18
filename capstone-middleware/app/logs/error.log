@@ -1,0 +1,3 @@
+{"name":"debug","hostname":"MER-LAP-0329","pid":21608,"level":50,"msg":"[Middleware] signup:  {\n  username: 'Venky c',\n  email: 'v@trer.com',\n  password: 'Meritus@321',\n  role: 'admin'\n}","time":"2021-08-18T12:58:32.599Z","v":0}
+{"name":"error","hostname":"MER-LAP-0329","pid":22868,"level":50,"msg":"[Middleware] singin:  Password Invalid for user Venkatesh B","time":"2021-08-18T13:02:58.919Z","v":0}
+{"name":"error","hostname":"MER-LAP-0329","pid":7020,"level":50,"msg":"[Middleware] singin:  Password Invalid for user Venkatesh B","time":"2021-08-18T13:19:34.821Z","v":0}

@@ -1,0 +1,19 @@
+{"name":"debug","hostname":"MER-LAP-0329","pid":27396,"level":30,"msg":"[Middleware] signup:  {\n  username: 'Venky',\n  email: 'v@t.com',\n  password: 'Meritus@321',\n  role: 'admin'\n}","time":"2021-08-18T12:50:45.115Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":27396,"level":30,"msg":"[Middleware] signup:  successfull register","time":"2021-08-18T12:50:45.168Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":13488,"level":30,"msg":"[Middleware] signup:  {\n  username: 'Venky BBB',\n  email: 'v@tre.com',\n  password: 'Meritus@321',\n  role: 'admin'\n}","time":"2021-08-18T12:57:43.505Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":13488,"level":30,"msg":"[Middleware] signup:  successfull register","time":"2021-08-18T12:57:43.567Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":21608,"level":30,"msg":"[Middleware] signup:  {\n  username: 'Venky c',\n  email: 'v@trer.com',\n  password: 'Meritus@321',\n  role: 'admin'\n}","time":"2021-08-18T12:58:32.598Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":21608,"level":50,"msg":"[Middleware] signup:  {\n  username: 'Venky c',\n  email: 'v@trer.com',\n  password: 'Meritus@321',\n  role: 'admin'\n}","time":"2021-08-18T12:58:32.599Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":21608,"level":30,"msg":"[Middleware] signup:  successfull register","time":"2021-08-18T12:58:32.641Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":22868,"level":30,"msg":"[Middleware] singin:  v@m.com","time":"2021-08-18T13:02:58.872Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":11740,"level":20,"msg":"[DB Connection]: Successfully connect to MongoDB. ","time":"2021-08-18T13:17:58.707Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":16888,"level":20,"msg":"[DB Connection]: Successfully connect to MongoDB. ","time":"2021-08-18T13:18:35.582Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":7020,"level":30,"msg":"[Server Start]: PORT:  8080 !.","time":"2021-08-18T13:19:26.732Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":7020,"level":20,"msg":"[DB Connection]: Successfully connect to MongoDB. ","time":"2021-08-18T13:19:26.754Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":7020,"level":30,"msg":"[Middleware] singin:  v@m.com","time":"2021-08-18T13:19:34.763Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":7020,"level":30,"msg":"[Middleware] singin:  v@m.com","time":"2021-08-18T13:19:51.889Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":7020,"level":30,"msg":"[Middleware] Successfull login for user Venkatesh B","time":"2021-08-18T13:19:51.915Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":15976,"level":30,"msg":"[Server Start]: PORT:  8080 !.","time":"2021-08-18T13:20:52.394Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":15976,"level":20,"msg":"[DB Connection]: Successfully connect to MongoDB. ","time":"2021-08-18T13:20:52.423Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":15976,"level":20,"msg":"[getAllFields] : [object Object]","time":"2021-08-18T13:21:11.113Z","v":0}
+{"name":"debug","hostname":"MER-LAP-0329","pid":15976,"level":30,"msg":"[getAllCandidates]  Success","time":"2021-08-18T13:21:27.383Z","v":0}

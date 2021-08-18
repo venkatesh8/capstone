@@ -1,0 +1,169 @@
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="showAlert">
+    <strong>{{commonMessage?.message ? commonMessage?.message : commonMessage}} </strong>
+    <a href="" [routerLink]='["/candidate/data"]'> View Candidates</a>
+    <button type="button" class="btn btn-light close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true"><i class="bi bi-x"></i></span>
+    </button>
+  </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+            <div class="card">
+                <h5 class="card-title text-center mb-2 mt-2">
+                    Create a profile with Merilytics Careers
+                </h5>
+                <div class="card-body">
+                    <form class="form" [formGroup]="candidateForm" (ngSubmit)="onSubmit()">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>First Name <span class="asterisk">*</span></label>
+                                    <input type="text" class="form-control" formControlName="firstName">
+                                    <span class="error"
+                                        *ngIf="validateInput('firstName')">
+                                        First Name is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Middle Name</label>
+                                    <input type="text" class="form-control" formControlName="middleName">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Last Name <span class="asterisk">*</span></label>
+                                    <input type="text" class="form-control" formControlName="lastName">
+                                    <span class="error"
+                                        *ngIf="validateInput('lastName')">
+                                        Last Name is required
+                                    </span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="row"> 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email <span class="asterisk">*</span></label>
+                                    <input type="text" class="form-control" formControlName="email" >
+                                    <span class="error"
+                                        *ngIf="validateInput('email')">
+                                        Email is required
+                                    </span>
+                                    <span class="error"
+                                        *ngIf="candidateFormControls.email.touched && candidateFormControls.email.errors?.email">
+                                        Enter a valid email address
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile Number <span class="asterisk">*</span></label>
+                                    <input type="text" class="form-control" formControlName="mobileNumber" placeholder="9XXXXXXXXX">
+                                    <span class="error"
+                                        *ngIf="validateInput('mobileNumber')">
+                                        Mobile Number is required
+                                    </span>
+                                    <span class="error"
+                                        *ngIf="candidateFormControls.mobileNumber.touched && candidateFormControls.mobileNumber.errors?.pattern">
+                                        Enter a valid Mobile Number
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"> 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Domain <span class="asterisk">*</span></label>
+                                    <select class="form-control custom-select custom-select-lg form-select" formControlName="domain">
+                                        <option  [ngValue]="null" value="" disabled>Domain</option>
+                                        <option *ngFor="let domain of domains" [ngValue]="domain.domainName">
+                                         {{ domain.domainName}}
+                                        </option>
+                                      </select> 
+                                    <span class="error"
+                                        *ngIf="validateInput('domain')">
+                                        Domain is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Role <span class="asterisk">*</span></label>
+                                    <select class="form-control custom-select custom-select-lg form-select" formControlName="role">
+                                        <option  [ngValue]="null" value="" disabled>Role</option>
+                                        <option *ngFor="let role of roles" [ngValue]="role.role">
+                                         {{ role.role }}
+                                        </option>
+                                      </select> 
+                                    <span class="error"
+                                        *ngIf="validateInput('role')">
+                                        Role is required
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="resume-source">Resume Source <span class="asterisk">*</span> <span class="other-source"> <input type="checkbox" class="form-check-input"/> Other Source</span></label>
+                                    <select  *ngIf="resumeSources" class="form-control custom-select custom-select-lg form-select" formControlName="resumeSource">
+                                        <option  [ngValue]="null" value="" disabled>Resume Source</option>
+                                        <option *ngFor="let resumeSource of resumeSources" [ngValue]="resumeSource.source">
+                                         {{ resumeSource.source }}
+                                        </option>
+                                      </select> 
+                                    <span class="error"
+                                        *ngIf="validateInput('resumeSource')">
+                                        Resume Source is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Select a from to Email <span class="asterisk">*</span></label>
+                                    <select *ngIf="formToEmails" class="form-control custom-select custom-select-lg form-select" formControlName="formToEmail">
+                                        <option  [ngValue]="null" value="" disabled>Select a From to Email</option>
+                                        <option *ngFor="let formToEmail of formToEmails" [ngValue]="formToEmail.name">
+                                         {{ formToEmail.name }}
+                                        </option>
+                                      </select> 
+                                    <span class="error"
+                                        *ngIf="validateInput('formToEmail')">
+                                        Select a Form to Email is required
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Recruiter Name <span class="asterisk">*</span></label>
+                                    <select class="form-control custom-select custom-select-lg form-select" formControlName="recruiterName">
+                                        <option  [ngValue]="null" value="" disabled>Recruiter Name</option>
+                                        <option *ngFor="let recruiter of recruiters" [ngValue]="recruiter.recruiterName">
+                                         {{ recruiter.recruiterName }}
+                                        </option>
+                                      </select> 
+                                    <span class="error"
+                                        *ngIf="validateInput('recruiterName')">
+                                        Recruiter Name is required
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group button-footer">
+                            <button  class="btn cancel-button" type="reset" >Cancel</button>
+                            <button type="submit" class="btn submit-button">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

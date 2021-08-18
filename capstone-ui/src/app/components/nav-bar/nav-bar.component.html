@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" [routerLink]='["/"]'><img src="./../../../assets/Merilytics-logo.png" width="160"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="toggleCollapsed()">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup"
+        [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+        <ul class="navbar-nav mr-auto"  *ngIf="currentUser">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/candidate/form"]'>Candidate Form</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]='["/candidate/data"]'>Candidate Data</a>
+            </li>
+        </ul>
+    </div>
+    <div class="loginProfile" *ngIf="currentUser">
+        <div class="profile">
+            <span class="" >{{ currentUser.username }}</span>
+            <small>{{currentUser.userRole}}</small>
+        </div>
+        <div class="navbar-brand nav-item" >
+            <div class="profile-wrapper">
+            <a href="" (click)="logout()" title="Logout"><img src="../../../assets/profile_pic.jpeg" width="40" height="40" class="rounded-circle profile-img"></a>
+            </div>
+        </div>
+    </div>
+</nav>

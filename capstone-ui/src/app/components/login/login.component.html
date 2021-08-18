@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row " >
+        <div class="col-md-4 mx-auto">
+    <div class="card">
+        <article class="card-body">
+        <h4 class="card-title text-center mb-2 mt-1">Sign in</h4>
+             <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
+            <div class="form-group">
+                <label>Email <span class="asterisk">*</span></label>
+                <input  class="form-control" placeholder="Email" type="text" formControlName="email">
+                <span class="error" *ngIf="validateLoginInput('email')">Email is required</span>
+                <span class="error" *ngIf="loginFormControls.email.touched && loginFormControls.email.errors?.email">Enter a valid email address</span>
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                <label>Password <span class="asterisk">*</span></label>
+                <input class="form-control" placeholder="Password" type="password" formControlName="password">
+                <span class="error" *ngIf="validateLoginInput('password')">Password is required</span>
+                <span class="error" *ngIf="loginFormControls.password.touched && loginFormControls.password.errors?.minlength">Password is too short</span>
+            </div> <!-- form-group// --> 
+            <div class="form-group">
+                <button type="submit" class="btn submit-button"> Login  </button>
+            </div> <!-- form-group// -->                                                           
+        </form>
+        </article>
+        </div>
+    </div>
+    </div>
+</div>

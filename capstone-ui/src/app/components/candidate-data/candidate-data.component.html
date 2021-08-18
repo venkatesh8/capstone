@@ -1,0 +1,57 @@
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="showAlert">
+  <strong>Success!</strong> Candidate delete/Update success.
+  <button type="button" class="btn btn-light close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true"><i class="bi bi-x"></i></span>
+  </button>
+</div>
+<div class="container">
+<div class="table-wrapper">
+<table class="table">
+    <thead class="header">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile No.</th>
+      <th scope="col">Applied Domain</th>
+      <th scope="col">Role</th>
+      <th scope="col">Recruiter</th>
+      <th scope="col">Form</th>
+      <th scope="col">Resume Source</th>
+      <th scope="col">Created On</th>
+      <th scope="col">Modified On</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+      
+    </tr>
+    </thead>
+    <tbody *ngIf="candidates">
+    <tr *ngFor="let candidate of candidates">
+      <td>
+        <span>{{ candidate.firstName}} {{candidate.middleName}} {{candidate.lastName}}</span>
+      </td>
+      <td>{{ candidate.email}}</td>
+      <td>{{ candidate.mobileNumber }}</td>
+      <td>{{ candidate.domain }}</td>
+      <td>{{ candidate.role }}</td>
+      <td>{{ candidate.recruiterName }}</td>
+      <td>{{ candidate.formToEmail }}</td>
+      <td>{{ candidate.resumeSource }}</td>
+      <td>{{ candidate.createdAt | date :'dd/MM/yyyy H:mm:ss' }}</td>
+      <td>{{ candidate.modifiedAt | date :'dd/MM/yyyy H:mm:ss' }}</td>
+      <td><button class="btn" (click)="editCandidate(candidate._id);"><i class="bi bi-pencil"></i></button></td>
+      <td><button class="btn btn-danger" (click)="deleteCandidate(candidate._id);"><i class="bi bi-trash-fill"></i></button></td>
+    </tr>
+    </tbody>
+  </table>
+  
+  <!-- <div class="d-flex justify-content-end pt-2">
+    <select class="form-group custom-select select-per-page" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCandidates()">
+      <option [ngValue]="5" selected>5</option>
+      <option [ngValue]="10">10</option>
+      <option [ngValue]="15">15</option>
+    </select> <span class="mt-2 p-2">per page</span>
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCandidates()">
+    </ngb-pagination>
+  </div> -->
+</div>
+</div>

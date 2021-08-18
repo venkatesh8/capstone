@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #eeeeee; }
+.container {
+    padding-top: 20px;
+  }
+
+  .card-title{
+    color: #95af29;
+}
+.form-group{
+    padding: 10px;
+    .form-control:focus{
+        border-color: #95af29;
+        box-shadow: 0 0 0 0.1rem rgb(201 215 154);
+    }
+    label{
+        font-size: 13px;
+        padding-left: 2px;
+    }
+    .asterisk{
+        color: red;
+    }
+    select.ng-touched.ng-invalid, input.ng-touched.ng-invalid{
+        border: red 1px solid;
+        box-shadow: 0 0 0 0.1rem #e8aeae;
+    }
+    span.error{
+        font-size: 13px;
+        color: red;
+    }
+}
+
+
+.submit-button{
+    background:#5dc6e0;
+    color: #fff;
+    font-weight: 500;
+    background-image: linear-gradient(to right, #2d9db9 , #5dc6e0);
+    float:right;
+}
